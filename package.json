@@ -1,0 +1,32 @@
+{
+  "name": "booking",
+  "version": "1.0.0",
+  "description": "booking app with angular and node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "server": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlgaKrasnova/booking.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Olga Krasnova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlgaKrasnova/booking/issues"
+  },
+  "homepage": "https://github.com/OlgaKrasnova/booking#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
