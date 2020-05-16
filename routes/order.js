@@ -1,8 +1,10 @@
 const express = require('express')
-const contoller = require('../controllers/order')
+const passport = require('passport')
+
+const controller = require('../controllers/order')
 const router = express.Router()
 
-router.get('/', contoller.getAll)
-router.post('/', contoller.create)
+router.get('/', passport.authenticate('jwt', {session: false}), controller.getAll)
+router.post('/', passport.authenticate('jwt', {session: false}), controller.create)
 
 module.exports = router

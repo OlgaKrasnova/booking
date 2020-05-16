@@ -1,0 +1,54 @@
+<!-- Список позиций -->
+<div class="row">
+    <div class="col s12">
+        <div class="page-subtitle">
+            <h4>Услуги:</h4>
+            <button class="waves-effect waves-light btn grey darken-1 btn-small modal-trigger" data-target="create-modal">
+                Добавить услугу
+            </button>
+        </div>
+
+        <!-- Вывод услуг -->
+        <div *ngIf="!loading; else loader">
+            <div class="collection" *ngIf="positions.length !== 0; else empty">
+                <a 
+                    *ngFor="let position of positions"
+                    class="collection-item collection-item-icon"
+                >
+                    <span>
+                        {{position.name}} <strong>{{position.cost}} руб.</strong>
+                    </span>
+                    <span>
+                        <i class="material-icons">delete</i>
+                    </span>
+                </a>
+            </div>
+            <ng-template #empty>
+                <div class="center">У данного мастера нет услуг.</div>
+            </ng-template>
+        </div>
+        <ng-template #loader>
+            <app-loader></app-loader>
+        </ng-template>
+    </div>
+</div>
+
+<!-- Модальное окно -->
+<div id="create-modal" class="modal">
+    <div class="modal-content">
+        <h4 class="mb1">Добавить услугу</h4>
+        <div class="input-field">
+            <input id="pos-name" type="text" required>
+            <label for="pos-name">Название</label>
+        </div>
+        <div class="input-field">
+            <input id="pos-cost" type="text" required>
+            <label for="pos-cost">Цена</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action waves-effect waves-black btn-flat">Отмена</a>
+        <button class="modal-action btn waves-effect">Сохранить</button>
+    </div>
+</div>
+
