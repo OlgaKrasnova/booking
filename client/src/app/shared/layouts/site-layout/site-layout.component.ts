@@ -11,7 +11,7 @@ import { MaterialService } from '../../classes/material.service';
 export class SiteLayoutComponent implements OnInit, AfterViewInit {
 
   @ViewChild('floating') floatingRef: ElementRef
-
+  //Пул ссылок, формирующих боковое меню
   links = [
     {url: '/overview', name: 'Обзор'},
     // {url: '/analytics', name: 'Аналитика'},
