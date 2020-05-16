@@ -31,7 +31,7 @@ export class SiteLayoutComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     MaterialService.initializeFloatingButton(this.floatingRef)
   }
-
+  //Метод для выхода из системы
   logout(event: Event){
     event.preventDefault()
     this.auth.logout()
