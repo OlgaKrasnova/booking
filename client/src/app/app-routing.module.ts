@@ -14,6 +14,7 @@ import {CategoriesFormComponent} from './categories-page/categories-form/categor
 import {OrderCategoriesComponent} from './order-page/order-categories/order-categories.component'
 import {OrderPositionsComponent} from './order-page/order-positions/order-positions.component'
 
+//Создание роутов - путей
 const routes: Routes = [
   {
     path: '', component: AuthLayoutComponent, children: [
