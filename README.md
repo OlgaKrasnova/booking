@@ -1,2 +1,2 @@
-# booking
-Booking to the hairdresser. This project was created for discipline "Software Engineering"
+# Запись к парикмахеру
+Проект, реализующий функционал для ИС "Запись к парикмахеру"
