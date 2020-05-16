@@ -10,7 +10,7 @@ import {Message, Position} from '../interfaces'
 export class PositionsService {
   constructor(private http: HttpClient) {
   }
-
+  //Метод получения ID мастера (категории), к которой принадлежит услуга
   fetch(categoryId: string): Observable<Position[]> {
     return this.http.get<Position[]>(`/api/position/${categoryId}`)
   }
