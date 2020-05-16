@@ -22,6 +22,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
 
   
   ngOnInit() {
+    //Контроль формы
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(6)])
@@ -29,12 +30,15 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
+    //Отписка от события
     if(this.aSub) {
       this.aSub.unsubscribe()
     }
   }
   
+  //Сохранение по нажтию
   onSubmit() {
+    //Отключение формы
     this.form.disable
     this.aSub = this.auth.register(this.form.value).subscribe(
       () => {
@@ -45,6 +49,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
         })
       },
       error => {
+        //Обработка ошибок
         MaterialService.toast(error.error.message)
         this.form.enable()
       }
