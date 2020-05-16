@@ -22,7 +22,7 @@ export class PositionsService {
   update(position: Position): Observable<Position> {
     return this.http.patch<Position>(`/api/position/${position._id}`, position)
   }
-  // Удаление услуги
+  // Удаление услуги из списка всех услуг
   delete(position: Position): Observable<Message> {
     return this.http.delete<Message>(`/api/position/${position._id}`)
   }
