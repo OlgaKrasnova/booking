@@ -1,3 +1,5 @@
+//Файл для описания сущности пользователя
+
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
