@@ -14,11 +14,11 @@ export class AuthService {
     
     constructor(private http: HttpClient){
     }
-    
+    //Регистрация нового пользователя
     register(user: User): Observable<User>{
         return this.http.post<User>('/api/auth/register', user)    
     }
-    
+    //Авторизация уже существующего в системе пользователя по токену
     login(user: User): Observable<{token: string}> {
         return this.http.post<{token: string}>('/api/auth/login', user)
             .pipe(
@@ -30,11 +30,11 @@ export class AuthService {
                 )
             )
     }
-
+    //Установка токена
     setToken(token: string) {
         this.token = token
     }
-
+    //Получение токена для передачи
     getToken(): string {
         return this.token
     }
@@ -42,7 +42,7 @@ export class AuthService {
     isAuthenticated(): boolean {
         return !!this.token
     }
-
+    //Выход из системы и очистка локального хранилища от токена
     logout() {
         this.setToken(null)
         localStorage.clear()
