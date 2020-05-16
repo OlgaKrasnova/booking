@@ -3,6 +3,12 @@ import { ElementRef } from '@angular/core'
 //Класс, позволяющий работать с сущностями Materialize
 declare var M
 
+export interface MaterialInstance {
+    open?(): void
+    close?(): void
+    destroy?(): void
+}
+
 export class MaterialService {
     //Метод, описывающий всплывающее уведомление об ошибки
     static toast(message: string) {
@@ -17,5 +23,10 @@ export class MaterialService {
     //Метод, описывающий обновление полей
     static updateTextInputs() {
         M.updateTextFields()
+    }
+
+    //Метод, описывающий инициализацию модального окна
+    static initModal(ref: ElementRef): MaterialInstance {
+        return M.Modal.init(ref.nativeElement)
     }
 }
