@@ -14,15 +14,15 @@ export class PositionsService {
   fetch(categoryId: string): Observable<Position[]> {
     return this.http.get<Position[]>(`/api/position/${categoryId}`)
   }
-
-  create(position: Position): Observable<Position> {
+  //Создание новой услуги
+    create(position: Position): Observable<Position> {
     return this.http.post<Position>('/api/position', position)
   }
-
+  //Обновление информации об услуге
   update(position: Position): Observable<Position> {
     return this.http.patch<Position>(`/api/position/${position._id}`, position)
   }
-
+  // Удаление услуги
   delete(position: Position): Observable<Message> {
     return this.http.delete<Message>(`/api/position/${position._id}`)
   }
